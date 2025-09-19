@@ -8,7 +8,7 @@ interface Props {
     data: WeatherData;
 }
 
-// Map WeatherAPI descriptions to ReactAnimatedWeather icons
+
 const iconMap: Record<string, string> = {
     "Sunny": "CLEAR_DAY",
     "Clear": "CLEAR_DAY",
@@ -49,7 +49,6 @@ const iconMap: Record<string, string> = {
     "Patchy light rain with thunder": "RAIN",
     "Moderate or heavy rain with thunder": "RAIN",
 };
-
 
 const WeatherCard: React.FC<Props> = ({ data }) => {
     const weatherType = data.weather[0].description.toLowerCase();
