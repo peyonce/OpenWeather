@@ -1,69 +1,46 @@
-# React + TypeScript + Vite
+ # Weather Dashboard App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ## Overview
+ A modern **Weather Dashboard** build with **React + Typescript** that allows users to:
 
-Currently, two official plugins are available:
+ -Search for any city worldwide.
+ -View current weather conditions: temperature, humidity, wind speed, and weather description.
+ -Toggle between **hourly and daily forecast**.
+ -see dynamic **animated weather icons**.
+ -Enjoy a **dark, modern theme** with moving clouds and background effects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ ## Features
+ - **Search Functionaly:** Type a city to get real-time weather data.
+ - **Animated Icons:** Real-time weather animations with 'react-animated-weather'.
+ - **Responsive Design:** Works on mobile, table, and desktop screens.
+ - **Dark Theme UI:** Modern visuals with glassmorphism and background animations.
+ - **Environment Variable:** API key stored in '.env'.
 
-## Expanding the ESLint configuration
+## Completed Functionalities
+- Current weather display (temperature, humidity, wind speed, description)
+- Hourly forecast display
+- Daily forecast display
+- Dynamic weather icons (sun, clouds, rain, snow, etc.)
+- Background effects with moving clouds
+- Dark and modern theme
+- Mobile-friendly layout
+- City search with error handling (alerts for invalid cities)
+- Toggle between hourly and daily view
+- API key usage via `.env` file for security
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+ ##Technologies
+ - **React + Typescript**
+ - **Axios** for API calls
+ - **WeatherAPI** for weather data
+ - **React Animated Weather Icons**
+ - **CSS (Glasmorphism, Animations, Dark Theme)**
+ - **Vite** as build tool
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+ ## Setup
+ 1. clone the repository
+   ''bash
+   git clone <your-repo-url>
+ 
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
