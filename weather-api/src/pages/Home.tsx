@@ -12,7 +12,7 @@ const Home: React.FC = () => {
     const [weather, setWeather] = useState<WeatherData | null>(null);
     const [forecast, setForecast] = useState<ForecastData[]>([]);
     const [viewMode, setViewMode] = useState<"hourly" | "daily">("hourly");
-    const [unit, setUnit] = useState<"C" | "F">("C"); // Celsius or Fahrenheit
+    const [unit, setUnit] = useState<"C" | "F">("C");
     const [theme, setTheme] = useState<"dark" | "light">("dark");
     const [loading, setLoading] = useState(false);
 
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
         setLoading(true);
         try {
-            // Current weather
+
             const resCurrent = await axios.get(
                 "https://api.weatherapi.com/v1/current.json",
                 {
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
                 wind: {
                     speed: unit === "C"
                         ? resCurrent.data.current.wind_kph / 3.6
-                        : resCurrent.data.current.wind_mph * 0.44704, // convert mph to m/s
+                        : resCurrent.data.current.wind_mph * 0.44704,
                 },
                 weather: [
                     {
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
                 ],
             });
 
-            // Forecast
+
             const resForecast = await axios.get(
                 "https://api.weatherapi.com/v1/forecast.json",
                 {
@@ -100,12 +100,12 @@ const Home: React.FC = () => {
         }
     };
 
-    // Refetch whenever city, viewMode, or unit changes
+
     useEffect(() => {
         fetchWeather(city);
     }, [city, viewMode, unit]);
 
-    // Dynamic theme class
+
     const themeClass = theme === "dark" ? "theme-dark" : "theme-light";
 
     return (
@@ -114,7 +114,7 @@ const Home: React.FC = () => {
 
             <h1 className="dashboard-title">Weather Dashboard</h1>
 
-            {/* Theme & Unit Toggles */}
+
             <div className="settings-bar">
                 <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
                     {theme === "dark" ? "Light Mode" : "Dark Mode"}
@@ -124,7 +124,7 @@ const Home: React.FC = () => {
                 </button>
             </div>
 
-            {/* Search */}
+
             <div className="search-bar">
                 <input
                     type="text"
@@ -135,7 +135,7 @@ const Home: React.FC = () => {
                 <button onClick={() => fetchWeather(city)}>Search</button>
             </div>
 
-            {/* Hourly / Daily Toggle */}
+
             <div className="toggle-buttons">
                 <button
                     className={viewMode === "hourly" ? "active" : ""}
