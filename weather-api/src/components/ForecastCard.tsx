@@ -7,7 +7,6 @@ interface Props {
     data: ForecastData;
 }
 
-// Same mapping as WeatherCard
 const iconMap: Record<string, string> = {
     "Sunny": "CLEAR_DAY",
     "Clear": "CLEAR_DAY",
@@ -52,17 +51,16 @@ const iconMap: Record<string, string> = {
 const ForecastCard: React.FC<Props> = ({ data }) => {
     const date = new Date(data.dt_txt);
 
-    // ✅ Get day name (Monday → Sunday)
+
     const dayName = date.toLocaleDateString("en-US", { weekday: "long" });
 
-    // ✅ Get formatted hour (12h format)
+
     const hour = date.toLocaleString("en-US", { hour: "numeric", hour12: true });
 
     const weatherIcon = iconMap[data.weather[0].description] || "CLOUDY";
 
     return (
         <div className="card">
-            {/* Show Day + Hour */}
             <h3>{dayName}</h3>
             <p>{hour}</p>
 
