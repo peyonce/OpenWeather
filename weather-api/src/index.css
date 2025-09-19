@@ -1,6 +1,3 @@
-     /* ================================
-   Body & Background
-================================ */
      body,
      html {
        margin: 0;
@@ -11,7 +8,6 @@
        overflow-x: hidden;
      }
 
-     /* Theme classes */
      .theme-dark {
        background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
        background-size: cover;
@@ -32,18 +28,15 @@
        width: 100%;
        height: 100%;
        background: rgba(15, 15, 15, 0.6);
-       /* dark overlay for dark theme */
+
        z-index: -1;
      }
 
      .theme-light::before {
        background: rgba(255, 255, 255, 0.3);
-       /* light overlay for light theme */
+
      }
 
-     /* ================================
-   Moving Clouds
-================================ */
      .clouds {
        position: absolute;
        top: 0;
@@ -66,9 +59,6 @@
        }
      }
 
-     /* ================================
-   Container & Title
-================================ */
      .home-container {
        max-width: 1200px;
        margin: 0 auto;
@@ -87,9 +77,6 @@
        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
      }
 
-     /* ================================
-   Settings Bar (Theme & Units)
-================================ */
      .settings-bar {
        display: flex;
        justify-content: center;
@@ -117,9 +104,6 @@
        box-shadow: 0 6px 20px rgba(30, 144, 255, 0.5);
      }
 
-     /* ================================
-   Search Bar
-================================ */
      .search-bar {
        display: flex;
        justify-content: center;
@@ -163,9 +147,6 @@
        box-shadow: 0 8px 25px rgba(30, 144, 255, 0.6);
      }
 
-     /* ================================
-   Hourly / Daily Toggle Buttons
-================================ */
      .toggle-buttons {
        display: flex;
        justify-content: center;
@@ -201,9 +182,6 @@
        box-shadow: 0 10px 30px rgba(30, 144, 255, 0.8);
      }
 
-     /* ================================
-   Forecast Grid
-================================ */
      .forecast-grid {
        display: grid;
        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -211,9 +189,6 @@
        margin-top: 2rem;
      }
 
-     /* ================================
-   Weather & Forecast Cards
-================================ */
      .weather-card,
      .card {
        position: relative;
@@ -232,7 +207,6 @@
        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
      }
 
-     /* Weather Icon & Temperature */
      .weather-icon {
        display: inline-block;
        margin-bottom: 1rem;
@@ -252,23 +226,19 @@
        color: #cce0ff;
      }
 
-     /* Forecast Text */
      .forecast p {
        margin: 0.25rem 0;
        font-size: 1rem;
        color: #d1e8ff;
      }
 
-     /* Loading Text */
      .loading {
        text-align: center;
        font-size: 1.5rem;
        margin-top: 2rem;
      }
 
-     /* ================================
-   Responsive Design
-================================ */
+
      @media (max-width: 768px) {
        .dashboard-title {
          font-size: 2.5rem;
