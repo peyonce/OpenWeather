@@ -1,4 +1,4 @@
- import React from "react";
+import React from "react";
 import type { WeatherData } from "../types/type";
 //@ts-ignore
 import ReactAnimatedWeather from "react-animated-weather";
