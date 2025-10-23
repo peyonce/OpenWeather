@@ -72,8 +72,8 @@ const ForecastCard: React.FC<Props> = ({ data }) => {
             />
 
             <p>{Math.round(data.main.temp)}°C</p>
-            <p>💧 {data.main.humidity}%</p>
-            <p>💨 {data.wind.speed.toFixed(1)} m/s</p>
+            <p> {data.main.humidity}%</p>
+            <p> {data.wind.speed.toFixed(1)} m/s</p>
         </div>
     );
 };

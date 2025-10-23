@@ -65,8 +65,8 @@ const WeatherCard: React.FC<Props> = ({ data }) => {
             </div>
             <p className="temperature">{Math.round(data.main.temp)}°C</p>
             <p className="description">{data.weather[0].description}</p>
-            <p>💧 Humidity: {data.main.humidity}%</p>
-            <p>💨 Wind: {data.wind.speed.toFixed(1)} m/s</p>
+            <p> Humidity: {data.main.humidity}%</p>
+            <p> Wind: {data.wind.speed.toFixed(1)} m/s</p>
         </div>
     );
 };
